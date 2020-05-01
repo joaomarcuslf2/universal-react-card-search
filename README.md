@@ -1,5 +1,24 @@
 # Universal React App
 
+- [Universal React App](#universal-react-app)
+  - [Motivation](#motivation)
+  - [Commands](#commands)
+    - [Starting for specific platforms:](#starting-for-specific-platforms)
+    - [Building:](#building)
+    - [Additional commands:](#additional-commands)
+  - [Alias](#alias)
+    - [How to use:](#how-to-use)
+    - [General alias](#general-alias)
+    - [Shared alias](#shared-alias)
+    - [Platform specific alias](#platform-specific-alias)
+      - [Native](#native)
+      - [Web](#web)
+  - [How to develop](#how-to-develop)
+    - [React Native only:](#react-native-only)
+    - [Web only:](#web-only)
+    - [Both:](#both)
+  - [Table of external resources](#table-of-external-resources)
+
 ## Motivation
 
 I wanted to create an boilerplate like project to use React and React Native on the same project, and been able to create Universals components, sharing the same code between every platform.
