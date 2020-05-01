@@ -14,7 +14,7 @@ On native you will have support for Internacionalization, Every Expo resource an
 
 ### Starting for specific platforms:
 
-```
+```sh
     yarn start # Will start the Expo bundle on React Native mode
     yarn start-android # Will start the Expo bundle on React Native mode and open Android platform
     yarn start-ios # Will start the Expo bundle on React Native mode and open IOS platform
@@ -23,13 +23,13 @@ On native you will have support for Internacionalization, Every Expo resource an
 
 ### Building:
 
-```
+```sh
     yarn build-web # Will build application and generate web-build folder
 ```
 
 ### Additional commands:
 
-```
+```sh
     yarn lint-fix # Will run lint and fix all files
     yarn release # Will enable release-it commands
     yarn release:patch # Will run release-it to upgrade patch version
@@ -37,7 +37,73 @@ On native you will have support for Internacionalization, Every Expo resource an
     yarn release:major # Will run release-it to upgrade major version
 ```
 
+## Alias
+
+### How to use:
+
+```js
+import something from '@alias';
+import something from '@alias/path';
+import { something}  from '@alias';
+import { something}  from '@alias/path';
+```
+
+### General alias
+
+- '@src': will resolve to the src folder.
+- '@actions': will resolve to actions folder.
+- '@constants': will resolve to constants folder.
+- '@reducers': will resolve to reducers folder.
+- '@helpers': will resolve to helpers folder.
+- '@translations': will resolve to translations folder.
+
+### Shared alias
+
+- '@shared-components': will resolve to src/components/shared
+- '@shared-containers': will resolve to src/containers/shared
+
+### Platform specific alias
+
+This alias will change based on what platform you are using, the platform is defined by the enviroment variable APP_ENV.
+
+By default, if no APP_ENV is given, it resolves to Native.
+
+#### Native
+
+- '@components': will resolve to src/components/native
+- '@containers': will resolve to src/containers/native
+- '@scenes': will resolve to src/scenes/native
+- '@router': will resolve to src/router/native
+
+
+#### Web
+
+- '@components': will resolve to src/components/web
+- '@containers': will resolve to src/containers/web
+- '@scenes': will resolve to src/scenes/web
+- '@router': will resolve to src/router/web
+
 ## How to develop
+
+### React Native only:
+
+If you choose to only use React Native part, you can delete every shared or web folder, and the project will be just fine, no change need to be made.
+
+### Web only:
+
+If you choose to only use Web part, you can delete every shared or native folder, and change the babel.config.js or package.json.
+
+If you choose to modify babel.config.js, you just need to modify just the alias object. Change the @components, @containers, @scenes, @router, changing the 'native' word on the end of each line.
+
+Or if you choose to modify package.json, just add APP_ENV='web' on the beginning of each script.
+
+### Both:
+
+You can see that components, container, scenes, router have three folders inside each:
+
+- native: for React Native imports
+- web: for Web imports
+- shared: for files that can be imported on every platform
 
 ## Table of external resources
 
